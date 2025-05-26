@@ -60,3 +60,23 @@ JOIN Departments d ON e.DeptID = d.DeptID
 WHERE d.Location = 'Chicago';
 
 SELECT * FROM ChicagoEmployees;
+
+-- 4. Update the View `HighEarners`
+-- Modify it to also include `DeptID`.
+
+Drop View HighEarners;
+
+CREATE VIEW HighEarners AS
+SELECT Name, Salary, DeptID
+FROM Employees
+WHERE Salary > 60000;
+
+-- 5. Try to Update Data Through View
+-- Try updating an employee's salary through the `HighEarners` view.
+-- Was it allowed? Why or why not? Ans: Yes, update will succeed because the view is simple and single table without grouping or joins.
+
+UPDATE HighEarners
+SET Salary = 71000
+WHERE Name = 'Eve';
+
+SELECT * FROM HighEarners;
