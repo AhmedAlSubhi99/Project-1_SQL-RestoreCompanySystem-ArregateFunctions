@@ -38,3 +38,14 @@ FROM Employees
 WHERE Salary > 60000;
 
 SELECT * FROM HighEarners;
+
+-- 2. Create a View `EmpDepartmentInfo`
+-- Join Employees and Departments tables.
+-- Show: `Name`, `Salary`, `DeptName`, `Location`.
+
+CREATE VIEW EmpDepartmentInfo AS
+SELECT e.Name, e.Salary, d.DeptName, d.Location
+FROM Employees e
+JOIN Departments d ON e.DeptID = d.DeptID;
+
+SELECT * FROM EmpDepartmentInfo;
