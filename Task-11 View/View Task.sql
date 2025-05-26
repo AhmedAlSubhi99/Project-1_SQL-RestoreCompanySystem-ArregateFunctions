@@ -85,3 +85,15 @@ SELECT * FROM HighEarners;
 -- Use `DROP VIEW`.
 
 DROP VIEW ChicagoEmployees;
+
+-- 7.Create a view `DepartmentStats` that shows:
+-- `DeptName`
+-- Number of employees in each department
+
+CREATE VIEW DepartmentStats AS
+SELECT d.DeptName, COUNT(e.EmpID) AS NumEmployees
+FROM Departments d
+LEFT JOIN Employees e ON d.DeptID = e.DeptID
+GROUP BY d.DeptName;
+
+SELECT * FROM DepartmentStats;
