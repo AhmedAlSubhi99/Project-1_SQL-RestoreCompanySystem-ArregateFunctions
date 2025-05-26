@@ -80,3 +80,8 @@ SET Salary = 71000
 WHERE Name = 'Eve';
 
 SELECT * FROM HighEarners;
+
+-- 6. Delete the View `ChicagoEmployees`
+-- Use `DROP VIEW`.
+
+DROP VIEW ChicagoEmployees;
