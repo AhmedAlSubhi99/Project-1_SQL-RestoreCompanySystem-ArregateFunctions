@@ -27,3 +27,14 @@ VALUES
     (101, 'Engineering', 'New York'),
     (102, 'Sales', 'Chicago'),
     (103, 'HR', 'San Francisco');
+
+-- Step 2: Tasks
+-- 1. Create a View `HighEarners`
+-- Show employee `Name` and `Salary` for employees earning more than 60,000.
+
+CREATE VIEW HighEarners
+AS SELECT Name, Salary
+FROM Employees
+WHERE Salary > 60000;
+
+SELECT * FROM HighEarners;
